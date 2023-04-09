@@ -2,14 +2,17 @@
 for(var i =0; i<document.querySelectorAll(".drum").length ; i++){   // adding event listeners to all buttons through for loop.
     document.querySelectorAll(".drum")[i].addEventListener("click" , function(){
             var buttonInnerHtml = this.innerHTML;                // STORING the inner html (text) of the element. // this returns identity of elements.
-            soundPlay(buttonInnerHtml);}
+            soundPlay(buttonInnerHtml);         // // for sound.
+            addAnimation(buttonInnerHtml);      // for animation.
+        }
     );
 }
 
 // Event listener for keyboard press.
 document.addEventListener("keypress" , function(event){   //  event -- inside paranthesis allow us to tap into the 
     var Keypress = event.key;                         //  event that triggers the event listener.  //  key -- gives the key pressed like a, n,b,f ,k ,K,L,P .....   
-    soundPlay(Keypress) ;     
+    soundPlay(Keypress) ;   
+    addAnimation(Keypress);   // for animation.
 }); 
 
 // function that makes sound.
@@ -85,3 +88,11 @@ function soundPlay(text){
     }
 };
 
+// adding animation to buttons on keypress or clicks
+function addAnimation(currentKey){
+    var currentPress = document.querySelector("."+currentKey);
+    currentPress.classList.add("pressed");
+    setTimeout(function() {                        //   set time for animation.
+        currentPress.classList.remove("pressed");
+      }, 200);
+}
