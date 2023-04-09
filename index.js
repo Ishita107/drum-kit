@@ -2,8 +2,8 @@
 for(var i =0; i<document.querySelectorAll(".drum").length ; i++){   // adding event listeners to all buttons through for loop.
     document.querySelectorAll(".drum")[i].addEventListener("click" , function(){
             var buttonInnerHtml = this.innerHTML;                // STORING the inner html (text) of the element. // this returns identity of elements.
-            soundPlay(buttonInnerHtml); }
-            );
+            soundPlay(buttonInnerHtml);}
+    );
 }
 
 // Event listener for keyboard press.
@@ -84,3 +84,4 @@ function soundPlay(text){
             alert("wrong button or key pressed");
     }
 };
+
