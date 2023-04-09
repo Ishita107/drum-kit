@@ -1,5 +1,44 @@
-for(var i =0; i<document.querySelectorAll(".drum").length ; i++){   // adding event listeners to all buttons through for loop
+for(var i =0; i<document.querySelectorAll(".drum").length ; i++){   // adding event listeners to all buttons through for loop.
     document.querySelectorAll(".drum")[i].addEventListener("click" , function(){
-          // STORING the inner html (text) of the element. // this returns identity of elements.
+            var buttonInnerHtml = this.innerHTML                // STORING the inner html (text) of the element. // this returns identity of elements.
+            switch (buttonInnerHtml){                     //  adding sounds to buttons. 
+                case "W":
+                    var Tom1 = new Audio("sounds/tom-1.mp3");    //  Tom1 ,Tom2 ,Crash ..... are javascript objects.
+                    Tom1.play();
+                    break;
+
+                case "A":
+                    var Tom2 = new Audio("sounds/tom-2.mp3");
+                    Tom2.play();
+                    break;
+
+                case "S":
+                    var Tom3 = new Audio("sounds/tom-3.mp3");
+                    Tom3.play();
+                    break;
+                
+                case "D":
+                    var Tom4 = new Audio("sounds/tom-4.mp3");
+                    Tom4.play();
+                    break;
+
+                case "J":
+                    var Snare = new Audio("sounds/snare.mp3");
+                    Snare.play();
+                    break;
+                
+                case "K":
+                    var Crash = new Audio("sounds/crash.mp3");
+                    Crash.play();
+                    break;
+
+                case "L":
+                    var Kick = new Audio("sounds/kick-bass.mp3");
+                    Kick.play();
+                    break;
+
+                default:
+                    alert("wrong button or key pressed");
+            }
     })
 }
